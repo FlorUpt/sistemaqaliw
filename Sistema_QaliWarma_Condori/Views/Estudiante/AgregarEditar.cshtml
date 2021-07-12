@@ -1,0 +1,74 @@
+﻿@model Sistema_QaliWarma_Condori.Models.Estudiante
+@{ ViewBag.Title = "AgregarEditar"; }
+
+<h2>Agregar / Editar</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="~/Estudiante/Index">Estudiante</a></li>
+        <li class="breadcrumb-item active">@Model.nombre</li>
+    </ol>
+</nav>
+
+<br />
+<br />
+
+@using (Html.BeginForm("Guardar", "Estudiante", FormMethod.Post))
+{
+    @Html.HiddenFor(X => X.estudiante_id)
+
+    <div class="card">
+        <div class="card-header">Informacion del Usuario</div>
+        <div class="card-body">
+            <div class="form-group">
+                @Html.LabelFor(x => x.estudiante_id)
+                @Html.TextBoxFor(x => x.estudiante_id, new { @class = "form-control", disabled = true })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.estudiante_codigo)
+                @Html.TextBoxFor(x => x.estudiante_codigo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.estudiante_codigo, null, new { @class = "text-danger" })
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.nombre)
+                @Html.TextBoxFor(x => x.nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.nombre, null, new { @class = "text-danger" })
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.apellido)
+                @Html.TextBoxFor(x => x.apellido, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.apellido, null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.nivel)
+                @Html.TextBoxFor(x => x.nivel, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.nivel, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.grado)
+                @Html.TextBoxFor(x => x.grado, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.grado, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.seccion)
+                @Html.TextBoxFor(x => x.seccion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.seccion, null, new { @class = "text-danger" })
+            </div>
+            
+
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="~/Semestre" class="btn btn-danger">Cancelar</a>
+            </div>
+
+        </div>
+
+
+    </div>
+}

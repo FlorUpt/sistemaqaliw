@@ -1,0 +1,40 @@
+﻿@model Sistema_QaliWarma_Condori.Models.Usuario
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<h2>Visualizar</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="~/Usuario/Index">Usuario</a></li>
+        <li class="breadcrumb-item active">@Model.nombre</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">Informacion del Usuario</div>
+    <div class="card-body">
+        <dl class="list-group-horizontal">
+
+            <dt>ID</dt>
+            <dd>@Model.usuario_id</dd>
+            <dt>APELLIDOS Y NOMBRES</dt>
+            <dd>@Model.apellidos ,@Model.nombre</dd>
+            <dt>EMAIL</dt>
+            <dd>@Model.email</dd>
+            <dt>CLAVE</dt>
+            <dd>@Model.clave</dd>
+            <dt>ESTADO</dt>
+            <dd>@(Model.estado.Equals("A") ? "Activo" : "Inactivo" )</dd>
+
+        </dl>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+
+

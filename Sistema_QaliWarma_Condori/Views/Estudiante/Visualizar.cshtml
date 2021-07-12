@@ -1,0 +1,44 @@
+﻿@model Sistema_QaliWarma_Condori.Models.Estudiante
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<h2>Visualizar</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="~/Estudiante/Index">Estudiante</a></li>
+        <li class="breadcrumb-item active">@Model.nombre</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-header">Informacion del Estudiante</div>
+    <div class="card-body">
+        <dl class="list-group-horizontal">
+
+            <dt>ID</dt>
+            <dd>@Model.estudiante_id</dd>
+            <dt>CODIGO</dt>
+            <dd>@Model.estudiante_codigo</dd>
+            <dt>APELLIDOS Y NOMBRES</dt>
+            <dd>@Model.apellido ,@Model.nombre</dd>
+            <dt>NIVEL</dt>
+            <dd>@Model.nivel</dd>
+            <dt>GRADO</dt>
+            <dd>@Model.grado</dd>
+            <dt>SECCION</dt>
+            <dd>@Model.seccion</dd>
+            
+
+        </dl>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+
+
+

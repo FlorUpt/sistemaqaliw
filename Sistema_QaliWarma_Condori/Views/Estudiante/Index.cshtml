@@ -1,0 +1,55 @@
+﻿@model List<Sistema_QaliWarma_Condori.Models.Estudiante>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="card-header">
+    <a href="~/Estudiante/AgregarEditar/" class="btn btn-info float-right"> Nuevo Estudiante </a>
+</h2>
+
+@*@using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { semestre = "frm-usuario" }))
+    {
+        <div class="text-left">
+            @Html.Label("Buscar:")
+            @Html.TextBox("criterio")
+            <button type="submit" class="btn btn-secondary">Buscar</button>
+        </div>
+    }*@
+
+<table id="DatatableP" class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CODIGO</th>
+            <th>APELLIDOS Y NOMBRES</th>
+            <th>NIVEL</th>
+            <th>GRADO</th>
+            <th>SECCION</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.estudiante_id)</td>
+                <td>@(m.estudiante_codigo)</td>
+                <td>@(m.apellido) , @(m.nombre)</td>
+                <td>@(m.nivel)</td>
+                <td>@(m.grado)</td>
+                <td>@(m.seccion)</td>
+               
+
+                <td style="align-content:center; ">
+                    <a href="~/Estudiante/Visualizar/@m.estudiante_id" class="btn btn-warning">DETALLE</a>
+                    <a href="~/Estudiante/AgregarEditar/@m.estudiante_id" class="btn btn-primary">MODIFICAR</a>
+                    <a href="~/Estudiante/Eliminar/@m.estudiante_id" class="btn btn-danger" onclick="return confirm('¿Estas seguro de eliminar elemento?'); ">ELIMINAR</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<br />
